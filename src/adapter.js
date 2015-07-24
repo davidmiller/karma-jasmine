@@ -43,7 +43,7 @@ var getCurrentTransport = function() {
 
   // Probably running in debug.html (there's no socket.io),
   // or in debug mode with socket.io but no socket on this host.
-  if (!parentWindow.io || !parentWindow.io.sockets[hostname]) {
+  if (!parentWindow.io || !parentWindow.io.sockets || !parentWindow.io.sockets[hostname]) {
     return null;
   }
 
